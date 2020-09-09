@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -g -fsanitize=undefined,address -std=c++17  -rdynamic CMakeFiles/RotateLED.dir/test.cpp.o  -o RotateLED  -Wl,-rpath,/usr/local/lib /usr/local/lib/libopencv_highgui.so.4.4.0 /usr/local/lib/libopencv_videoio.so.4.4.0 /usr/local/lib/libopencv_imgcodecs.so.4.4.0 /usr/local/lib/libopencv_imgproc.so.4.4.0 /usr/local/lib/libopencv_core.so.4.4.0 
