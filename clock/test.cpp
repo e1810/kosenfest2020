@@ -32,7 +32,7 @@ void twe(int twe_x, int twe_y, double degree, double x, double y){
 }
 	
 
-void glowLed(const int deg, const cv::Mat &img){
+void glowLed(const int deg){
     const double degree = deg * M_PI / 180.0;
 	for(int i=0; i<6; i++){
 	}
@@ -44,15 +44,14 @@ void glowLed(const int deg, const cv::Mat &img){
 		if(80<=deg && deg<=100){
 			twe(i-6, deg-80, degree, x, y);
 		}
+		// TODO nin, six, thr を実装
 	}
 }
 
-void write(const std::string image_name){
-    const cv::Mat img = cv::imread(image_name, cv::IMREAD_COLOR);
+void write(){
     for(int i=0; i<360; i++){
-        glowLed(i, img);
+        glowLed(i);
     }
-    cv::imshow(image_name, img);
     //-----BLOCK DEBUG-----
     cv::imshow("showing", cv::Mat(HEIGHT, WIDTH, CV_8UC3, mat));
     //-----END DEBUG-----
@@ -62,14 +61,5 @@ void write(const std::string image_name){
 
 int main(int argc, char** argv){
 	startat = system_clock::now();
-	if(!argv[1]){
-		puts("at least 1 argument(positive integer) required");
-		return 0;
-	}
-	LED_COUNT = atoi(argv[1]);
-	if(!LED_COUNT){
-		puts("at least 1 argument(positive integer) required");
-		return 0;
-	}
-	write("image.png");
+	write();	// == void loop() {}
 }
