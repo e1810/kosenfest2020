@@ -1,3 +1,0 @@
-/home/y61mpnl/project/kosenfest2020/build/CMakeFiles/rebuild_cache.dir
-/home/y61mpnl/project/kosenfest2020/build/CMakeFiles/edit_cache.dir
-/home/y61mpnl/project/kosenfest2020/build/CMakeFiles/RotateLED.dir
