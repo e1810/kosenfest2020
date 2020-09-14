@@ -45,7 +45,7 @@ bool getTimeChar(int num, int x, int y){
 		time_char[3] = "...###...###.........";
 		time_char[4] = "...###...###.........";
 		time_char[5] = "...###...#########...";
-	}
+	}else return false;
 	return (time_char[5-x][20-y] == '#');
 }
 
@@ -53,7 +53,7 @@ bool getTimeChar(int num, int x, int y){
 void glowLed(int deg){
 	time_t _now = time(0);
 	tm *now = localtime(&_now);
-	int hour_deg = (60 * now->tm_hour + now->tm_min) / 4;
+	int hour_deg = (60 * now->tm_hour + now->tm_min) / 2;
 	hour_deg = (540 - hour_deg) % 360;
 	int minute_deg = (now->tm_min) * 6;
 	minute_deg = (540 - minute_deg) % 360;
