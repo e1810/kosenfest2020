@@ -53,7 +53,7 @@ bool getTimeChar(int num, int x, int y){
 void glowLed(int deg){
 	time_t _now = time(0);
 	tm *now = localtime(&_now);
-	int hour_deg = (60 * now->tm_hour + now->tm_min) / 2;
+	int hour_deg = (60 * (now->tm_hour%12) + now->tm_min) / 2;
 	hour_deg = (540 - hour_deg) % 360;
 	int minute_deg = (now->tm_min) * 6;
 	minute_deg = (540 - minute_deg) % 360;
